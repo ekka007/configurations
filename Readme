@@ -1,1 +1,11 @@
+ssh -i new-jenkins.pem ec2-user@3.110.170.238
 
+==============================================
+
+if there is different java version in maven then 
+
+step-1 download required java version
+
+step-2 sudo update-alternatives --config java { select here version }
+
+step-3 export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre   { change the java by go to home from step-2 }
