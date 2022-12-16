@@ -9,3 +9,10 @@ step-1 download required java version
 step-2 sudo update-alternatives --config java { select here version }
 
 step-3 export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre   { change the java by go to home from step-2 }
+
+
+===============================================
+
+REMOVE MULTIPLE JAVA IN SYSTEM
+
+sudo update-alternatives --remove "java" "/usr/lib/jvm/java-17-openjdk-amd64/bin/java"
