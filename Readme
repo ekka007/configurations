@@ -16,3 +16,4 @@ step-3 export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre   { change the java by go
 REMOVE MULTIPLE JAVA IN SYSTEM
 
 sudo update-alternatives --remove "java" "/usr/lib/jvm/java-17-openjdk-amd64/bin/java"
+THEN EXPORT
