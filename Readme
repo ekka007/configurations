@@ -25,16 +25,16 @@ Here is the process to add the docker group in Linux and grant access to it from
 
 Create the docker group if it does not already exist:
 Copy code
-sudo groupadd docker
+==>  sudo groupadd docker
 Add the jenkins user to the docker group:
 Copy code
-sudo usermod -aG docker jenkins
+==>  sudo usermod -aG docker jenkins
 Log out and log back in to your system or reboot it, so that the group membership is updated for the Jenkins user.
 
 Verify that the Jenkins user has been added to the docker group by running the following command:
 
 Copy code
-id jenkins
+==>  id jenkins
 This should show that the user jenkins is a member of the docker group among other information.
 
 Now that Jenkins is a member of the docker group, it will have access to the Docker daemon. You can now run Docker commands, including docker build, as the Jenkins user.
@@ -42,7 +42,7 @@ Now that Jenkins is a member of the docker group, it will have access to the Doc
 Finally, you should configure Jenkins user to allow access to unix socket. you can use jenkins user to run command below:
 
 Copy code
-sudo chown "jenkins:jenkins" /var/run/docker.sock
+==>  sudo chown "jenkins:jenkins" /var/run/docker.sock
 By following this process, the Jenkins user will now have access to the Docker daemon and be able to run docker build commands without encountering permission denied errors.
 
 Please let me know if you have any questions or issues regarding this process.
