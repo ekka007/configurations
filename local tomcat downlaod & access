@@ -1,0 +1,12 @@
+# amazon-linux-extras 
+$ amazon-linux-extras install tomcat9 
+$ service tomcat start
+$ service tomcat status
+
+-----------------------------------------
+
+# artifact created locally and  Deploy to webapps
+
+$ /var/lib/tomcat/webapps/
+
+-----------------------------------------
