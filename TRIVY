@@ -1,0 +1,47 @@
+# following the official docs #
+# // https://aquasecurity.github.io/trivy/v0.36/getting-started/installation/ //
+
+====================================================================================================
+RELEASE_VERSION=$(grep -Po '(?<=VERSION_ID=")[0-9]' /etc/os-release)
+cat << EOF | sudo tee -a /etc/yum.repos.d/trivy.repo
+[trivy]
+name=Trivy repository
+baseurl=https://aquasecurity.github.io/trivy-repo/rpm/releases/$RELEASE_VERSION/\$basearch/
+gpgcheck=0
+enabled=1
+EOF
+sudo yum -y update
+sudo yum -y install trivy
+================================================================================================================= +
+ USE ---->  RHEL/CentOS                                                                                           +
+                                                                                                                  +
+Repository                                                                                                        +
+RPM                                                                                                               +
+                                                                                                                  +   
+STEP1 --> $ rpm -ivh https://github.com/aquasecurity/trivy/releases/download/v0.36.1/trivy_0.36.1_Linux-64bit.rpm + 
+                                                                                                                  +  
+// To add the Trivy executable to your system's PATH environment variable, you can use the following steps: //    +
+                                                                                                                  +    
+// Find the installation directory for Trivy: //                                                                  +                               
+                                                                                                                  +
+STEP2 --> $ rpm -ql trivy                                                                                         +
+                                                                                                                  +  
+STEP3 --> LOCATE ---> /root/.bash_pofile --> $ vim .bash_profile --> export PATH=$PATH:/usr/local/bin             +
+                                                                                                                  +
+STEP4 --> source ~/.bash_profile  ( TO REFRESH THE PROFILE )                                                      +
+                                                                                                                  +
+STEP5 --> trivy --version                                                                                         +
+                                                                                                                  +
+                                                                                                                  +              
+==================================================================================================================+  
+
+// COMMANDS  //
+
+$ trivy image < image_name >
+
+
+
+
+
+
+ 
