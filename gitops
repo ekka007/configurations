@@ -14,4 +14,5 @@ step3 - kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBal
                                                                             
 step4 - kubectl get all -n argocd  // to see the port access for arcgo cd to web //
 
-step5 - kubectl get all -n argocd  // use this command in CLI to get encrypted password of argoCD
+step5 - kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+  // use this command in CLI to get encrypted password of argoCD  //
