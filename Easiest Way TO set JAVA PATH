@@ -1,3 +1,8 @@
-sudo update-alternatives --config java
+sudo update-alternatives --config java   <----------------- copy path
 
+sudo vim /etc/environment                <-----------------  open env file
+
+PATH = {copy the full path of java}      <----------------  paster here & save
+
+source /etc/environment                  <----------------  refresh
 
